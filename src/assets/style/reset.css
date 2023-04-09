@@ -1,0 +1,22 @@
+/* BASE CONFIG */
+*{
+  padding: 0;
+  margin: 0;
+box-sizing: border-box;
+}
+body{
+  font-family: "open Sans",Arial, Helvetica, sans-serif;
+	background: #ffc107;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+button{
+	background: none;
+	border: none;
+}
+li{
+	list-style: none;
+}
+/* BASE CONFIG */
