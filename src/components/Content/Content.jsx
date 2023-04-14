@@ -11,6 +11,16 @@ const Content = () =>{
     const [setPage] = useState (10)
     const [inputValue , setInputValue] = useState('')
     const inputName = inputValue
+    const sortPosts = () => {
+      console.log('dad')
+      return(
+        <div>
+        {
+          repos.sort((a,b)=> b.stargazers_count > a.stargazers_count ? 1: -1)
+        }
+        </div>
+      )
+    }
 
     const getApi = async() =>{
       setLoading(true)
@@ -32,7 +42,12 @@ const paginate = nums => setCurrentPage(nums)
   return ( 
     <> 
       <Header></Header>
-      <div className="container__sm">
+      <div className="container__sm" id="start">
+        <button className="btn" onClick={() =>{
+          setLoading(true)
+          sortPosts()
+          setTimeout(() =>{setLoading(false)},500)
+        }}>sort ☆ ☆ ☆</button>
         <input className="serch" type="text" placeholder="Serch" onChange={e => setInputValue(e.target.value)} />
         <button className="btn" onClick={getApi}>Click</button>
         <Resp repos={currenrepos} loading={loading} />
